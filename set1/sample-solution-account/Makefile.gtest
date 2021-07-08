@@ -1,0 +1,9 @@
+all:all.out
+all.out:account.o account_test.o
+	g++ $^ -o $@ -lgtest -lgtest_main -lpthread
+%.o:%.cxx
+	g++ $< -c
+clean:	
+	rm -rf *.o *.out
+test:all.out	
+	./all.out

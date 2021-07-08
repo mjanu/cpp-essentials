@@ -1,0 +1,9 @@
+all:all.out
+all.out:account.o main.o
+	g++ $^ -o $@ 
+%.o:%.cxx
+	g++ $< -c
+clean:	
+	rm -rf *.o *.out
+test:all.out	
+	./all.out
